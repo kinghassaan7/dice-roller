@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Dice</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+    <div id="dice" style="width: 200px; height: 200px;"></div>
+
+    <input type="submit" value="Roll" onclick="rollDice();">
+</div>
+    <script>
+        function rollDice() {
+            let images = Math.ceil(Math.random() * 6)
+            let diceImage = "dice-roller-" + images + ".jpg"
+
+            document.getElementById("dice").innerHTML = `<img src="${diceImage}" style="width: 100%; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;">`;
+            document.getElementById("dice").style.visibility = "visible";
+        }
+    </script>
+
+</body>
+</html>
